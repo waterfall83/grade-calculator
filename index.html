@@ -1,128 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Final Exam Grade Calculator</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #b6a5d5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: none;
-      width: 100%;
-      max-width: 420px;
-    }
-
-    h1 {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-top: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.6rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      margin-top: 1.5rem;
-      width: 100%;
-      padding: 0.7rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      background: #40305C;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #2B203D;
-    }
-
-    .result {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .note {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Final Exam Grade Calculator</h1>
-
-    <label>Current grade in the course</label>
-    <input id="current" type="number" placeholder="e.g. 98" />
-
-    <label>Final exam weight (%)</label>
-    <input id="weight" type="number" placeholder="e.g. 10" />
-
-    <label>Desired overall grade in the course</label>
-    <input id="desired" type="number" placeholder="e.g. 94" />
-
-    <button onclick="calculate()">Calculate necessary final exam score</button>
-
-    <div id="result" class="result"></div>
-    <div id="note" class="note"></div>
-  </div>
-
-  <script>
-    function calculate() {
-      const current = parseFloat(document.getElementById('current').value);
-      const weight = parseFloat(document.getElementById('weight').value);
-      const desired = parseFloat(document.getElementById('desired').value);
-
-      const resultDiv = document.getElementById('result');
-      const noteDiv = document.getElementById('note');
-
-      if (isNaN(current) || isNaN(weight) || isNaN(desired)) {
-        resultDiv.textContent = 'Please fill in all fields.';
-        noteDiv.textContent = '';
-        return;
-      }
-
-      const w = weight / 100;
-      const needed = (desired - current * (1 - w)) / w;
-      const rounded = Math.round(needed * 10) / 10;
-
-      resultDiv.textContent = `You need ${rounded}% on the final.`;
-
-      if (rounded > 100) {
-        noteDiv.textContent = 'This is mathematically impossible.';
-      } else if (rounded <= 0) {
-        noteDiv.textContent = 'You already have the grade secured.';
-      } else {
-        noteDiv.textContent = '';
-      }
-    }
-  </script>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="/" id="navbar_logo">My Grade Calculator</a>
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="/gpa.html" class="navbar_links">GPA</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="/finalexam.html" class="navbar_links">Final Exam</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Welcome to My Grade Calculator</h1>
 </body>
 </html>
