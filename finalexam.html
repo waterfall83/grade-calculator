@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo">My Grade Calculator</a>
+
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="index.html" class="navbar_links">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="gpa.html" class="navbar_links">GPA</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="finalexam.html" class="navbar_links">Final Exam</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page">
+        <div class="card">
+            <h1>Final Exam Grade Calculator</h1>
+
+            <label>Current grade</label>
+            <input id="current" type="number" placeholder="e.g. 98">
+
+            <label>Final exam weight (%)</label>
+            <input id="weight" type="number" placeholder="e.g. 10">
+
+            <label>Desired overall grade</label>
+            <input id="desired" type="number" placeholder="e.g. 94">
+
+            <button onclick="calculate()">Calculate</button>
+
+            <div id="result" class="result"></div>
+            <div id="note" class="note"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+
+/* hide scrollbars globally */
+html {
+    -ms-overflow-style: none;   /* IE + Edge */
+    scrollbar-width: none;      /* Firefox */
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;              /* Chrome, Safari */
+}
+
+/* ************************* */
+/* navbar */
+/* ************************* */
+
+.navbar {
+    background: #ffffff;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.navbar_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#navbar_logo {
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #5f5aa2;
+}
+
+.navbar_menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.navbar_links {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+.navbar_links:hover {
+    color: #5f5aa2;
+}
+
+/* ************************* */
+/* page background */
+/* ************************* */
+
+body {
+    background: #eeedf7;
+    min-height: 100vh;
+}
+
+/* ************************* */
+/* final exam page */
+/* ************************* */
+
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.2rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 30px rgba(156, 143, 193, 0.08);
+}
+
+.card h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    color: #444;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 1px solid #e3e3ee;
+    font-size: 0.95rem;
+    background: #faf9ff;
+    transition: 0.2s ease;
+}
+
+input:focus {
+    border-color: #dcd8ff;
+    background: #ffffff;
+    outline: none;
+}
+
+button {
+    margin-top: 1.8rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: none;
+    background: #dcd6ff;
+    color: #4b42a3;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #c7c0ff;
+}
+
+.result {
+    margin-top: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+    color: #4b42a3;
+}
+
+.note {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #4b42a3;
+}
+
+/* ************************* */
+/* gpa page */
+/* ************************* */
+
+.gpa-page {
+    max-width: 1200px;   /* wider so year cards expand more */
+    margin: 50px auto;
+    padding: 0 10px 80px 10px;
+}
+
+.gpa-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: #444;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    .year-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ************************* */
+/* school year cards */
+/* ************************* */
+
+.year-card {
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 18px;
+    box-shadow: 0 6px 25px rgba(156, 143, 193, 0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 15vh;
+}
+
+.year-card h2 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #5f5aa2;
+}
+
+.course-list-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+    margin-bottom: 8px;
+}
+
+/* ************************* */
+/* gpa page course rows */
+/* ************************* */
+
+.course-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.course-row input,
+.course-row select {
+    width: auto;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #edecf5;
+    background: #fafaff;
+}
+
+.course-row input[type="text"] {
+    /*flex: 1;
+    min-width: 0;*/
+    width: 250px;
+}
+
+.course-row .grade {
+    width: 75px;
+    flex-shrink: 0;
+}
+
+.course-row .weight {
+    width: 85px;
+    flex-shrink: 0;
+}
+
+.course-row .credits {
+    width: 76px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.course-row button {
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    padding: 0;
+    border-radius: 8px;
+    background: #edeaff;
+    color: #4b42a3;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.course-row button:hover {
+    background: #dad5ff;
+}
+
+.course-row input:focus {
+    border-color: #dcd8ff;
+    background: #ffffff;
+    outline: none;
+}
+
+/* ************************* */
+/* gpa results */
+/* ************************* */
+
+.gpa-summary {
+    margin-top: 25px;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.gpa-results {
+    font-size: 1.15rem;
+    color: #4b42a3;
+}
+
+.gpa-results span {
+    font-weight: 700;
+    margin-left: 6px;
+}
