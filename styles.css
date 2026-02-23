@@ -274,7 +274,8 @@ button:hover {
 }
 
 .course-row button:hover {
-    background: #dad5ff;
+    /*background: #dad5ff;*/
+    background: #c4c0e3;
 }
 
 .course-row input:focus {
